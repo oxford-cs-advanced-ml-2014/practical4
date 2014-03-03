@@ -5,7 +5,7 @@ export QT_PLUGIN_PATH=""
 
 export PYTHONPATH="$(pwd)/pylearn2:$PYTHONPATH"
 export PYLEARN2_VIEWER_COMMAND="eog --new-instance"
-export PYLEARN2_DATA_PATH="$(pwd)/data"
+export PYLEARN2_DATA_PATH="$(cat .data)"
 
 HERE="$(pwd)"
 TOOL_PATH="$HERE:pylearn2/pylearn2/scripts"
