@@ -5,9 +5,7 @@ set -e
 #ROOT=$(dirname $(readlink -e $0))
 ROOT="$(pwd)"
 LOCAL_MACHINE_SCRATCH_SPACE=/home/scratch
-#ENV="$(mktemp -u -d -p "$LOCAL_MACHINE_SCRATCH_SPACE" "conda_env.$USER.XXXXXXXXXXXX")/conda"
-
-ENV="$ROOT/env"
+ENV="$(mktemp -u -d -p "$LOCAL_MACHINE_SCRATCH_SPACE" "conda_env.$USER.XXXXXXXXXXXX")/conda"
 
 function safe_call {
     # usage:
@@ -50,8 +48,7 @@ echo "$ENV" > "$ROOT/.env"
 
 safe_call conda_install numpy
 safe_call conda_install scipy
-#safe_call conda_install scikit-learn
 safe_call conda_install matplotlib pil
 safe_call conda_install pyyaml
 safe_call pip_install git+git://github.com/Theano/Theano.git
-#safe_call install_pylearn2 
+safe_call install_pylearn2 
